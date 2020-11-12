@@ -1,0 +1,112 @@
+!SceneAsset
+Id: 730bf2f2-6bba-48e2-b26c-d9322e73d6fa
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+ChildrenIds: []
+Offset: {X: 0.0, Y: 0.0, Z: 0.0}
+Hierarchy:
+    RootParts:
+        - ref!! 40069a23-bceb-4483-95ed-8624de475f35
+        - ref!! e7564a3e-8c68-4a76-a4cd-1fa81bde508f
+        - ref!! ccbb2dbb-b8f4-49a3-b044-7742d2e28dc7
+        - ref!! 9aeae509-d796-4922-aaf2-a41c2bb9d1af
+        - ref!! 839be8e7-1a2a-4bca-9acb-56bc075b87f2
+    Parts:
+        -   Entity:
+                Id: 40069a23-bceb-4483-95ed-8624de475f35
+                Name: Camera
+                Components:
+                    43172ee1b5e22ee1e0980fd00ac98b38: !TransformComponent
+                        Id: 466c68fc-fdeb-49e1-a61e-b08186a92165
+                        Position: {X: 2.6, Y: 0.6, Z: -1.0}
+                        Rotation: {X: 0.0, Y: 0.829037547, Z: 0.0, W: 0.5591929}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    ac257a92f1703a54dceb08f64e2f10dc: !CameraComponent
+                        Id: 8f5a9f0b-e5a1-473f-b1f4-b3e4b877ae58
+                        Name: null
+                        Projection: Perspective
+                        Slot: 40f3732d-a75a-429e-bf5a-8ad9e4d87c46
+                    a9f71a6b792ff8cca7f02169d555fc7e: !VolumetricShader.BasicCameraController,VolumetricShader
+                        Id: ca4dedc0-14fc-421d-8ae3-dc3a1367aa0b
+                        Gamepad: false
+                        KeyboardMovementSpeed: {X: 5.0, Y: 5.0, Z: 5.0}
+                        TouchMovementSpeed: {X: 0.7, Y: 0.7, Z: 0.3}
+                        SpeedFactor: 5.0
+                        KeyboardRotationSpeed: {X: 3.0, Y: 3.0}
+                        MouseRotationSpeed: {X: 1.0, Y: 1.0}
+                        TouchRotationSpeed: {X: 1.0, Y: 0.7}
+        -   Entity:
+                Id: 839be8e7-1a2a-4bca-9acb-56bc075b87f2
+                Name: Cube
+                Components:
+                    a9ba4bee7bb5885b80db4ff309c42994: !TransformComponent
+                        Id: 4e6fe967-f154-4604-bd56-e216375fa030
+                        Position: {X: 0.0, Y: 0.647266, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    f9edf46322af11d898c4d1b4c07d9bc2: !ModelComponent
+                        Id: 6b65f334-7ca6-459a-ace1-e586907aaa99
+                        Model: e84f7661-2fa8-4ed6-8d1f-05f762cd8380:Cube
+                        Materials:
+                            93dc03884376a4b14df251eea8923604~0: 181f6735-e33c-4650-90fd-f914841fe51f:Material
+                    4c029f5241f56bcfb902db1efe07ba28: !VolumetricShader.UpdateCameraPos,VolumetricShader
+                        Id: 5981b47c-b24b-4df6-80b9-31c24139b87b
+                        camera: ref!! 40069a23-bceb-4483-95ed-8624de475f35
+        -   Entity:
+                Id: 9aeae509-d796-4922-aaf2-a41c2bb9d1af
+                Name: Ground
+                Components:
+                    136ccf1eeaea614bea7c10fa8a57a12d: !TransformComponent
+                        Id: 6518ca44-3b10-4496-83e8-77a49ab7f235
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    0c14cc116056ebd3f0f5eeb6e7e3b611: !ModelComponent
+                        Id: 13c56216-24c9-456d-a8a7-a4743c88c5f5
+                        Model: 516d1734-c9ba-44d2-94e1-150e87c144c5:Ground
+                        Materials: {}
+        -   Entity:
+                Id: ccbb2dbb-b8f4-49a3-b044-7742d2e28dc7
+                Name: Skybox
+                Components:
+                    ecbf7576118fc569043aae37b225af71: !TransformComponent
+                        Id: 8de08c2a-a6e7-4598-8f75-f2a5bd737977
+                        Position: {X: 0.0, Y: 2.0, Z: -2.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    e4f57c12a8c64bdbeaca3217477d95d3: !BackgroundComponent
+                        Id: f048ac93-d510-4fad-9061-afbac1294c31
+                        Texture: 0c14e064-038a-4a81-8eb8-4f570b9d2055:Skybox texture
+                    41830b3e66c9e02db233137c18f89e43: !LightComponent
+                        Id: 81476dd0-4d9d-48b3-830b-0cd2b1221008
+                        Type: !LightSkybox
+                            Skybox: d86b2fea-22eb-48ab-8a2d-d66d7c58923b:Skybox
+        -   Entity:
+                Id: e7564a3e-8c68-4a76-a4cd-1fa81bde508f
+                Name: Directional light
+                Components:
+                    2f94946d411390b1303521348e6c954e: !TransformComponent
+                        Id: d50e4a20-54d0-4eb3-99a6-44f7a5c52f98
+                        Position: {X: 0.0, Y: 2.0, Z: 0.0}
+                        Rotation: {X: 1.131334E-08, Y: -0.9659258, Z: -0.258819044, W: -4.222196E-08}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    be0ce2742d7681198612b3d732304d4f: !LightComponent
+                        Id: 61a31327-8d7f-4f1b-bdbf-fe870eab2fde
+                        Type: !LightDirectional
+                            Color: !ColorRgbProvider
+                                Value: {R: 1.0, G: 1.0, B: 1.0}
+                            Shadow:
+                                Enabled: true
+                                Filter: !LightShadowMapFilterTypePcf
+                                    FilterSize: Filter5x5
+                                Size: Large
+                                DepthRange: {}
+                                PartitionMode: !LightDirectionalShadowMap.PartitionLogarithmic {}
+                                ComputeTransmittance: false
+                                BiasParameters: {}
+                        Intensity: 20.0

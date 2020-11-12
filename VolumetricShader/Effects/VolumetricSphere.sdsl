@@ -1,0 +1,53 @@
+﻿namespace VolumetricShader.Effects
+{
+    shader VolumetricSphere : ComputeColor, Texturing, ShaderBaseStream
+    {
+        float MAX_STEPS = 100;
+        float MAX_DIST = 100;
+        float SURF_DIST = 1e-2f;
+
+        cbuffer PerMaterial
+        {
+            stage float3 CameraPos = float3(0,0,-3);
+        }
+        override float4 Compute()
+        {
+            float4 sv = streams.ShadingPosition;
+            float2 uv = streams.TexCoord - 0.5 ;
+            float3 ro = CameraPos;
+            float3 rd = float3(1-uv.x,1-uv.y,0);
+            float4 color = float4(0,0,0,1);
+            float d = RayMarching(ro,rd);
+            
+            if(d<MAX_DIST)
+            {
+                color.x = 1;
+            }
+
+            return color;
+        }
+
+
+        float RayMarching(float3 ro, float3 rd)
+        {
+            float dO = 0.01;
+            float dS;
+            for(int i = 0; i< MAX_STEPS; i++)
+            {
+                float3 p = ro + dO * rd;
+                dS = GetDist(p);
+                dO += dS;
+
+                if(dS<SURF_DIST || dO > MAX_DIST) break;
+
+            }
+            return dO;
+        }
+        float GetDist(float3 p)
+        {
+            float d = length(p)-0.5f;
+            return d;
+        }
+
+    };
+}
